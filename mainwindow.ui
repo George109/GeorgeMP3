@@ -6,9 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>960</width>
-    <height>583</height>
+    <width>966</width>
+    <height>642</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
   </property>
   <property name="windowTitle">
    <string>George's MP3 Player</string>
@@ -269,7 +275,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>960</width>
+     <width>966</width>
      <height>24</height>
     </rect>
    </property>
@@ -298,10 +304,15 @@
     <property name="title">
      <string>Colour</string>
     </property>
+    <addaction name="actionWhite"/>
+    <addaction name="separator"/>
     <addaction name="actionReg"/>
     <addaction name="actionGreen"/>
-    <addaction name="actionYellow"/>
     <addaction name="actionBlue"/>
+    <addaction name="separator"/>
+    <addaction name="actionYellow"/>
+    <addaction name="actionOrange"/>
+    <addaction name="actionPink"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuColour"/>
@@ -360,6 +371,21 @@
   <action name="actionBlue">
    <property name="text">
     <string>Blue</string>
+   </property>
+  </action>
+  <action name="actionWhite">
+   <property name="text">
+    <string>White</string>
+   </property>
+  </action>
+  <action name="actionPink">
+   <property name="text">
+    <string>Pink</string>
+   </property>
+  </action>
+  <action name="actionOrange">
+   <property name="text">
+    <string>Orange</string>
    </property>
   </action>
  </widget>

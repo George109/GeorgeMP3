@@ -17,7 +17,9 @@ MainWindow::MainWindow(QWidget *parent) :
     setupPlayer();
     timerId = startTimer(100);
     count = 0;
-
+    setFixedSize(size());
+    this->statusBar()->setSizeGripEnabled(false);
+    setWindowFlags(Qt::Window | Qt::MSWindowsFixedSizeDialogHint);
 }
 
 MainWindow::~MainWindow()
@@ -326,3 +328,23 @@ void MainWindow::on_actionBlue_triggered()
     colourChange = false;
 }
 
+void MainWindow::on_actionWhite_triggered()
+{
+    setStyleSheet("background-color: white;");
+    //QCheckBox.setchecked(false);
+    colourChange = false;
+}
+
+void MainWindow::on_actionPink_triggered()
+{
+    setStyleSheet("background-color: pink;");
+    //QCheckBox.setchecked(false);
+    colourChange = false;
+}
+
+void MainWindow::on_actionOrange_triggered()
+{
+    setStyleSheet("background-color: orange;");
+    //QCheckBox.setchecked(false);
+    colourChange = false;
+}
