@@ -16,7 +16,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     setupPlayer();
     timerId = startTimer(100);
-
+    count = 0;
 
 }
 
@@ -43,24 +43,36 @@ void MainWindow::timerEvent(QTimerEvent *event)
             ui->ProgressSlider->setValue(pos);
         }
     }
-    if (count == 10){
-        setStyleSheet("background-color: red;");
+    if (colourChange == true){
+        if (count == 20){
+            setStyleSheet("background-color: red;");
+        }
+        else if (count == 40){
+            setStyleSheet("background-color: green;");
+        }
+        else if (count == 60){
+            setStyleSheet("background-color: blue;");
+        }
+        else if (count == 80){
+            setStyleSheet("background-color: yellow;");
+        }
+        else if (count == 100){
+            setStyleSheet("background-color: pink;");
+        }
+        else if (count == 120){
+            setStyleSheet("background-color: white;");
+            count = 0;
+        }
+        else {
+            //do nothing
+        }
+        qDebug() << count <<endl;
+        count++;
     }
-    else if (count == 20){
-        setStyleSheet("background-color: green;");
-    }
-    else if (count == 30){
-        setStyleSheet("background-color: blue;");
-    }
-    else if (count == 30){
-        setStyleSheet("background-color: white;");
-        count = 0;
-    }
-    else {
+    else{
         //do nothing
     }
-    qDebug() << count <<endl;
-    count++;
+
 }
 
 void MainWindow::setupPlayer(){
@@ -275,3 +287,42 @@ void MainWindow::on_actionAbout_triggered()
     AboutMSG.setText("Version 0.4 Dreadful<br>Changelog: <br>-Added a Menubar <br>-Added many many more bugs to fix later ;) <br><a href='https://github.com/George109/GeorgeMP3/'>Find this bs on GitHub.</a>");
     AboutMSG.exec();
 }
+
+void MainWindow::on_checkBox_stateChanged(int arg1)
+{
+    if (colourChange == true){
+        colourChange = false;
+    }
+    else if (colourChange == false){
+        colourChange = true;
+    }
+}
+
+void MainWindow::on_actionReg_triggered()
+{
+    setStyleSheet("background-color: red;");
+    QCheckBox::setchecked(false);
+    colourChange = false;
+}
+
+void MainWindow::on_actionGreen_triggered()
+{
+    setStyleSheet("background-color: green;");
+    QCheckBox::setchecked(false);
+    colourChange = false;
+}
+
+void MainWindow::on_actionYellow_triggered()
+{
+    setStyleSheet("background-color: yellow;");
+    QCheckBox::setchecked(false);
+    colourChange = false;
+}
+
+void MainWindow::on_actionBlue_triggered()
+{
+    setStyleSheet("background-color: blue;");
+    QCheckBox::setchecked(false);
+    colourChange = false;
+}
+

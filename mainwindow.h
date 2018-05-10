@@ -58,12 +58,23 @@ private slots:
 
     void on_actionAbout_triggered();
 
+    void on_checkBox_stateChanged(int arg1);
+
+    void on_actionReg_triggered();
+
+    void on_actionGreen_triggered();
+
+    void on_actionYellow_triggered();
+
+    void on_actionBlue_triggered();
+
 private:
     Ui::MainWindow *ui;
     quint64 dur, pos;
     QMediaPlayer mediaPlayer;
     int timerId;
     int count;
+    bool colourChange = true;
 
 protected:
     void timerEvent(QTimerEvent *event);
