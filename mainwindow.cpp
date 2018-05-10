@@ -377,7 +377,7 @@ void MainWindow::on_actionCyan_triggered()
 
 void MainWindow::on_actionTeal_triggered()
 {
-    setStyleSheet("background-color: cyan;");
+    setStyleSheet("background-color: teal;");
     //QCheckBox.setchecked(false);
     colourChange = false;
 }
