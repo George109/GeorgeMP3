@@ -45,7 +45,6 @@ void MainWindow::timerEvent(QTimerEvent *event)
     }
     if (x == 10){
         ui->centralWidget->setStyleSheet("background-color: red;");
-
     }
     else if (x == 20){
         setStyleSheet("background-color: green;");
@@ -271,6 +270,6 @@ void MainWindow::on_actionAbout_triggered()
     AboutMSG.setWindowTitle("About...");
     AboutMSG.setIcon(QMessageBox::Information);
     AboutMSG.setTextFormat(Qt::RichText);
-    AboutMSG.setText("Version 0.3 Camel<br>Changelog: <br>-Added a Menubar <br>-Added many many more bugs to fix later ;) <br><a href='https://github.com/George109/GeorgeMP3/'>Find this bs on GitHub.</a>");
+    AboutMSG.setText("Version 0.4 Dreadful<br>Changelog: <br>-Added a Menubar <br>-Added many many more bugs to fix later ;) <br><a href='https://github.com/George109/GeorgeMP3/'>Find this bs on GitHub.</a>");
     AboutMSG.exec();
 }
