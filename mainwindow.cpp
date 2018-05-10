@@ -301,28 +301,28 @@ void MainWindow::on_checkBox_stateChanged(int arg1)
 void MainWindow::on_actionReg_triggered()
 {
     setStyleSheet("background-color: red;");
-    QCheckBox::setchecked(false);
+    //QCheckBox.setchecked(false);
     colourChange = false;
 }
 
 void MainWindow::on_actionGreen_triggered()
 {
     setStyleSheet("background-color: green;");
-    QCheckBox::setchecked(false);
+    //QCheckBox.setchecked(false);
     colourChange = false;
 }
 
 void MainWindow::on_actionYellow_triggered()
 {
     setStyleSheet("background-color: yellow;");
-    QCheckBox::setchecked(false);
+    //QCheckBox.setchecked(false);
     colourChange = false;
 }
 
 void MainWindow::on_actionBlue_triggered()
 {
     setStyleSheet("background-color: blue;");
-    QCheckBox::setchecked(false);
+    //QCheckBox.setchecked(false);
     colourChange = false;
 }
 
