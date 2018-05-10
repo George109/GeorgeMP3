@@ -284,7 +284,7 @@ void MainWindow::on_actionAbout_triggered()
     AboutMSG.setWindowTitle("About...");
     AboutMSG.setIcon(QMessageBox::Information);
     AboutMSG.setTextFormat(Qt::RichText);
-    AboutMSG.setText("Version 0.4 Dreadful<br>Changelog: <br>-Added a Menubar <br>-Added many many more bugs to fix later ;) <br><a href='https://github.com/George109/GeorgeMP3/'>Find this bs on GitHub.</a>");
+    AboutMSG.setText("Version 0.4 Dreadful<br>Changelog: <br>-Added some colours <br>-Added many many more bugs to fix later ;) <br><a href='https://github.com/George109/GeorgeMP3/'>Find this bs on GitHub.</a>");
     AboutMSG.exec();
 }
 
