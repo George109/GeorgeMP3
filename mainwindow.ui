@@ -313,6 +313,10 @@
     <addaction name="actionYellow"/>
     <addaction name="actionOrange"/>
     <addaction name="actionPink"/>
+    <addaction name="separator"/>
+    <addaction name="actionCrimson"/>
+    <addaction name="actionTeal"/>
+    <addaction name="actionCyan"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuColour"/>
@@ -386,6 +390,21 @@
   <action name="actionOrange">
    <property name="text">
     <string>Orange</string>
+   </property>
+  </action>
+  <action name="actionCrimson">
+   <property name="text">
+    <string>Crimson</string>
+   </property>
+  </action>
+  <action name="actionTeal">
+   <property name="text">
+    <string>Teal</string>
+   </property>
+  </action>
+  <action name="actionCyan">
+   <property name="text">
+    <string>Cyan</string>
    </property>
   </action>
  </widget>

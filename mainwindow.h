@@ -74,6 +74,12 @@ private slots:
 
     void on_actionOrange_triggered();
 
+    void on_actionCrimson_triggered();
+
+    void on_actionCyan_triggered();
+
+    void on_actionTeal_triggered();
+
 private:
     Ui::MainWindow *ui;
     quint64 dur, pos;

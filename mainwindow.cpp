@@ -62,6 +62,18 @@ void MainWindow::timerEvent(QTimerEvent *event)
             setStyleSheet("background-color: pink;");
         }
         else if (count == 120){
+            setStyleSheet("background-color: orange;");
+        }
+        else if (count == 140){
+            setStyleSheet("background-color: crimson;");
+        }
+        else if (count == 160){
+            setStyleSheet("background-color: teal;");
+        }
+        else if (count == 180){
+            setStyleSheet("background-color: cyan;");
+        }
+        else if (count == 200){
             setStyleSheet("background-color: white;");
             count = 0;
         }
@@ -345,6 +357,27 @@ void MainWindow::on_actionPink_triggered()
 void MainWindow::on_actionOrange_triggered()
 {
     setStyleSheet("background-color: orange;");
+    //QCheckBox.setchecked(false);
+    colourChange = false;
+}
+
+void MainWindow::on_actionCrimson_triggered()
+{
+    setStyleSheet("background-color: crimson;");
+    //QCheckBox.setchecked(false);
+    colourChange = false;
+}
+
+void MainWindow::on_actionCyan_triggered()
+{
+    setStyleSheet("background-color: cyan;");
+    //QCheckBox.setchecked(false);
+    colourChange = false;
+}
+
+void MainWindow::on_actionTeal_triggered()
+{
+    setStyleSheet("background-color: cyan;");
     //QCheckBox.setchecked(false);
     colourChange = false;
 }
