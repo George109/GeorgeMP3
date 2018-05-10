@@ -33,3 +33,9 @@ HEADERS += \
 
 FORMS += \
         mainwindow.ui
+
+DISTFILES += \
+    folder_2_open-512.png
+
+RESOURCES += \
+    images.qrc

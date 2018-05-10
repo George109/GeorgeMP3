@@ -60,24 +60,58 @@ void MainWindow::setupPlayer(){
     ui->mute->setCursor(ForbiddenCursor);
     ui->horizontalSlider->setCursor(ForbiddenCursor);
     ui->ProgressSlider->setCursor(ForbiddenCursor);
+    ui->actionPlay->setEnabled(false);
+    ui->actionPause->setEnabled(false);
+    ui->actionStop->setEnabled(false);
 }
 
 
 void MainWindow::on_Quit_clicked()
 {
-    exit(0);
+    QMessageBox msgBox4;
+    QMessageBox msgBox5;
+    QMessageBox msgBox6;
+
+    msgBox4.setIcon(QMessageBox::Question);
+    msgBox4.setText("Do you wanna exit?");
+    msgBox4.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+    msgBox4.setDefaultButton(QMessageBox::Yes);
+
+    int ret = msgBox4.exec();
+
+    switch (ret) {
+    case QMessageBox::Yes:
+        msgBox5.setIcon(QMessageBox::Information);
+        msgBox5.setText("cya");
+        msgBox5.exec();
+        exit(0);
+        break;
+
+    case QMessageBox::No:
+        msgBox6.setIcon(QMessageBox::Question);
+        msgBox6.setText("Why are you still here?");
+        msgBox6.exec();
+        break;
+
+    default:
+        // should never be reached
+        break;
+    }
 }
 
 void MainWindow::on_play_clicked()
 {
     mediaPlayer.play();
     playing = true;
-
+    ui->play->setEnabled(false);
+    ui->pause->setEnabled(true);
 }
 
 void MainWindow::on_pause_clicked()
 {
     mediaPlayer.pause();
+    ui->play->setEnabled(true);
+    ui->pause->setEnabled(false);
 }
 
 void MainWindow::on_stop_clicked()
@@ -110,6 +144,9 @@ void MainWindow::on_open_clicked()
     ui->mute->setCursor(ArrowCursor);
     ui->horizontalSlider->setCursor(ArrowCursor);
     ui->ProgressSlider->setCursor(ArrowCursor);
+    ui->actionPlay->setEnabled(true);
+    ui->actionPause->setEnabled(true);
+    ui->actionStop->setEnabled(true);
 }
 
 void MainWindow::on_ProgressSlider_sliderMoved(int position)
@@ -145,7 +182,7 @@ void MainWindow::on_Help_clicked()
     QMessageBox msgBox2;
     QMessageBox msgBox3;
     QMessageBox msgBox4;
-
+    QMessageBox msgBox8;
     msgBox1.setText("This isn't how it works.\nUse Spotify.\nIt's probably little better than this 😉");
     msgBox1.setIcon(QMessageBox::Critical);
     msgBox1.exec();
@@ -157,7 +194,7 @@ void MainWindow::on_Help_clicked()
     msgBox3.setIcon(QMessageBox::Question);
     msgBox3.setText("Wanna download Spotify instead of this junk?");
     msgBox3.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
-    msgBox3.setDefaultButton(QMessageBox::Save);
+    msgBox3.setDefaultButton(QMessageBox::Yes);
 
     int ret = msgBox3.exec();
 
@@ -170,13 +207,39 @@ void MainWindow::on_Help_clicked()
         break;
 
     case QMessageBox::No:
-        msgBox4.setIcon(QMessageBox::Information);
-        msgBox4.setText("Whatever...");
-        msgBox4.exec();
+        msgBox8.setIcon(QMessageBox::Information);
+        msgBox8.setText("Whatever...");
+        msgBox8.exec();
         break;
 
     default:
         // should never be reached
         break;
     }
+}
+
+void MainWindow::on_actionOpen_triggered()
+{
+    MainWindow::on_open_clicked();
+}
+
+void MainWindow::on_actionPlay_triggered()
+{
+    MainWindow::on_play_clicked();
+}
+
+void MainWindow::on_actionPause_triggered()
+{
+    MainWindow::on_pause_clicked();
+}
+
+
+void MainWindow::on_actionStop_triggered()
+{
+    MainWindow::on_stop_clicked();
+}
+
+void MainWindow::on_actionExit_triggered()
+{
+    MainWindow::on_Quit_clicked();
 }
