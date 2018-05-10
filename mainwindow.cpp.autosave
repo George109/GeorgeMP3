@@ -45,7 +45,6 @@ void MainWindow::timerEvent(QTimerEvent *event)
     }
     if (x == 10){
         ui->centralWidget->setStyleSheet("background-color: red;");
-
     }
     else if (x == 20){
         setStyleSheet("background-color: green;");
