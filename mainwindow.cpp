@@ -233,7 +233,6 @@ void MainWindow::on_actionPause_triggered()
     MainWindow::on_pause_clicked();
 }
 
-
 void MainWindow::on_actionStop_triggered()
 {
     MainWindow::on_stop_clicked();
@@ -242,4 +241,19 @@ void MainWindow::on_actionStop_triggered()
 void MainWindow::on_actionExit_triggered()
 {
     MainWindow::on_Quit_clicked();
+}
+
+void MainWindow::on_actionHelp_triggered()
+{
+    MainWindow::on_Help_clicked();
+}
+
+void MainWindow::on_actionAbout_triggered()
+{
+    QMessageBox AboutMSG;
+    AboutMSG.setWindowTitle("About...");
+    AboutMSG.setIcon(QMessageBox::Information);
+    AboutMSG.setTextFormat(Qt::RichText);
+    AboutMSG.setText("Version 0.3 Camel<br>Changelog: <br>-Added a Menubar <br>-Added many many more bugs to fix later ;) <br><a href='https://github.com/George109/GeorgeMP3/'>Find this bs on GitHub.</a>");
+    AboutMSG.exec();
 }
