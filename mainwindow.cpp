@@ -151,7 +151,7 @@ void MainWindow::on_Help_clicked()
     msgBox1.exec();
 
     msgBox2.setIcon(QMessageBox::Warning);
-    msgBox2.setText("This was a BAD decision 😢");
+    msgBox2.setText("Using this was probably a bad decision...");
     msgBox2.exec();
 
     msgBox3.setIcon(QMessageBox::Question);
