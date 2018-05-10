@@ -6,7 +6,7 @@ bool muted = false;
 int oldVolume;
 using namespace std;
 using namespace Qt;
-int x = 0;
+
 QString filePath;
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -43,22 +43,24 @@ void MainWindow::timerEvent(QTimerEvent *event)
             ui->ProgressSlider->setValue(pos);
         }
     }
-    if (x == 10){
-        ui->centralWidget->setStyleSheet("background-color: red;");
+    if (count == 10){
+        setStyleSheet("background-color: red;");
     }
-    else if (x == 20){
+    else if (count == 20){
         setStyleSheet("background-color: green;");
     }
-    else if (x == 30){
+    else if (count == 30){
         setStyleSheet("background-color: blue;");
     }
-    else if (x == 30){
+    else if (count == 30){
         setStyleSheet("background-color: white;");
+        count = 0;
     }
     else {
         //do nothing
     }
-            x++;
+    qDebug() << count <<endl;
+    count++;
 }
 
 void MainWindow::setupPlayer(){

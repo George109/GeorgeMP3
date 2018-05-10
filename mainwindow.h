@@ -8,6 +8,7 @@
 #include <QTimer>
 #include <QFileDialog>
 #include <QMessageBox>
+#include <QDebug>
 
 namespace Ui {
 class MainWindow;
@@ -62,6 +63,7 @@ private:
     quint64 dur, pos;
     QMediaPlayer mediaPlayer;
     int timerId;
+    int count;
 
 protected:
     void timerEvent(QTimerEvent *event);
