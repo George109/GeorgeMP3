@@ -335,7 +335,7 @@ void MainWindow::on_actionYellow_triggered()
 
 void MainWindow::on_actionBlue_triggered()
 {
-    setStyleSheet("background-color: blue;");
+    setStyleSheet("background-color: slateblue;");
     //QCheckBox.setchecked(false);
     colourChange = false;
 }
